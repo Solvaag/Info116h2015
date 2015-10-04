@@ -1,0 +1,28 @@
+Sparql Queries
+
+//This file exists because PDFs do not always work well with copy-pasting. 
+
+data.gov endpoint
+
+Q1
+
+
+PREFIX sch-ont: <http://education.data.gov.uk/def/school/>
+SELECT distinct ?p WHERE {
+?s ?p ?o .
+} LIMIT 100
+
+Q2
+
+PREFIX schont: <http://education.data.gov.uk/def/school/>
+SELECT ?name WHERE {
+?school a schont:School.
+?school schont:establishmentName ?name.
+?school schont:districtAdministrative
+<http://statistics.data.gov.uk/id/local-authority-district/00AA>.
+}
+ORDER BY ?name
+
+
+
+
